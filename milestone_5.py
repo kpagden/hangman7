@@ -30,7 +30,6 @@ class Hangman:
         Args:
             guess (str): the letter guessed by the player.
         '''
-        guess = guess.lower()
         if guess in self.word:
             print(f'Good guess! {guess} is in the word.')
             for index, letter in enumerate(self.word):
@@ -48,7 +47,7 @@ class Hangman:
         '''
         while True:
             print(self.word_guessed)
-            guess = input('Enter a single letter: ')
+            guess = input('Enter a single letter: ').lower()
             if not (len(guess) == 1 and guess.isalpha()):
                 print('Invalid letter. Please enter a single alphabetical character.')
             elif guess in self.list_of_guesses:
@@ -77,7 +76,8 @@ def play_game(word_list):
             print('Congratulations. You won the game!')
             break
 
-play_game(word_list=['apple', 'apricot', 'avocado', 'banana', 'blackcurrant', 'cherry', 
-                     'clementine', 'coconut', 'dragonfruit', 'grapes', 'kumquat', 'lemon', 
-                     'lychee', 'mango', 'nectarine', 'papaya', 'passionfruit', 'pear', 'pineapple', 
-                     'pomegranate', 'strawberry', 'watermelon'])
+if __name__ == '__main__':
+    play_game(word_list=['apple', 'apricot', 'avocado', 'banana', 'blackcurrant', 'cherry', 
+                        'clementine', 'coconut', 'dragonfruit', 'grapes', 'kumquat', 'lemon', 
+                        'lychee', 'mango', 'nectarine', 'papaya', 'passionfruit', 'pear', 'pineapple', 
+                        'pomegranate', 'strawberry', 'watermelon'])
